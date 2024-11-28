@@ -28,6 +28,7 @@ pipeline {
         stage("Docker"){
             steps{
                 sh 'docker build -f Dockerfile -t myapp . '
+                sh 'docker run --name "myapp_container" -p 9091:9090 --detach myapp:latest'
             }
         }
 
