@@ -25,6 +25,11 @@ pipeline {
                 artifacts: '*/ryan_petitions.war'
             }
         }
+        stage("Docker"){
+            steps{
+                sh 'docker build -f Dockerfile -t myapp . '
+            }
+        }
 
     }
 }
