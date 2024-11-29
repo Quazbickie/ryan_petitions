@@ -14,7 +14,7 @@ public class RyanPetitionsApplication {
 	@Autowired
 	private PetitionService petitionService;
 
-	@GetMapping("/")
+	@GetMapping("/home")
 	public String home() {
 		return "home";
 	}
