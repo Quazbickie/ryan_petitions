@@ -5,15 +5,19 @@ import java.util.List;
 
 public class Petition {
 
-    private int ID;
+    private static int ID = 1;
     private String title;
     private String description;
     private List<String> signatures = new ArrayList<>();
 
     public Petition(int ID, String title, String description){
-        this.ID = ID;
+        this.ID = ID++;
         this.title = title;
         this.description = description;
+    }
+
+    public void addSignature(String name){
+        signatures.add(name);
     }
 
     public int getID() {
