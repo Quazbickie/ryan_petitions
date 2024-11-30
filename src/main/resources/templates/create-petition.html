@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Petition</title>
+</head>
+<body>
+    <div class="new-petition">
+        <form action="/petitions/create" method="post">
+            <label>Title:</label>
+            <input type="text" name="title" required>
+            <label>Description:</label>
+            <textarea name="description" required></textarea>
+            <button type="submit">Create Petition</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -48,6 +48,16 @@
             cursor: pointer;
         }
 
+        .create a {
+             text-decoration: none; /* Removes the underline */
+             color: white;
+             display: inline-block;
+             width: 100%;
+             height: 100%;
+             text-align: center;
+             line-height: normal;
+        }
+
         .create:hover {
             background-color: darkgreen;
         }

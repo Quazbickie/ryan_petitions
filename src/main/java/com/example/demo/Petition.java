@@ -5,13 +5,14 @@ import java.util.List;
 
 public class Petition {
 
-    private static int ID = 1;
+    private static int counter = 1;
+    private int ID;
     private String title;
     private String description;
     private List<String> signatures = new ArrayList<>();
 
     public Petition(String title, String description){
-        this.ID = ID++;
+        this.ID = counter++;
         this.title = title;
         this.description = description;
     }

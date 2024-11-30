@@ -17,9 +17,15 @@ public class RyanPetitionsApplication {
 
 	@GetMapping("/")
 	public String home(Model model) {
-		//System.out.println(petitionService.toString()); #DEBUG
+		System.out.println(petitionService.toString()); //DEBUG
 		model.addAttribute("petitions", petitionService.getPetitions());
 		return "home";
+	}
+
+	@GetMapping("/create")
+	public String showCreateForm(Model model){
+		model.addAttribute("petition", new Petition("",""));
+		return "create-petition";
 	}
 
 	@RequestMapping("/hello")

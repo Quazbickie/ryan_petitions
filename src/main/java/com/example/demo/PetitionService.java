@@ -12,6 +12,8 @@ public class PetitionService {
 
     public PetitionService(){
         petitions.add(new Petition("Save the turtles", "Petition to save the turtles")); // Dummy values
+        petitions.add(new Petition("Save the rainforest", "Petition to save the rainforest")); // Dummy values
+        petitions.add(new Petition("Save the planet", "Petition to save the planet")); // Dummy values
     }
 
     public void addPetition(Petition petition){
@@ -37,7 +39,7 @@ public class PetitionService {
     public String toString() {
         String ret = "";
         for (Petition p : petitions) {
-            ret += p.getTitle() + "\n";
+            ret += p.getID() + ") " + p.getTitle() + ": " + p.getDescription() + "\n";
         }
         return ret;
     }
