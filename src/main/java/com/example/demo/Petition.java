@@ -10,7 +10,7 @@ public class Petition {
     private String description;
     private List<String> signatures = new ArrayList<>();
 
-    public Petition(int ID, String title, String description){
+    public Petition(String title, String description){
         this.ID = ID++;
         this.title = title;
         this.description = description;

@@ -1,0 +1,91 @@
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: white;
+            padding: 5px;
+        }
+
+        .navbar h1 {
+            color: black;
+        }
+
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-container input[type="text"] {
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 12px;
+        }
+
+        .search {
+            padding: 5px 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .create {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .create:hover {
+            background-color: darkgreen;
+        }
+
+        .petition-list {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 2px;
+        }
+
+        .petition {
+            display: flex;
+            flex-direction: column;
+            background-color: #f9f9f9;
+            border: 1px solid black;
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .petition h2 {
+            margin: 0 0 5px 0;
+            color: #333;
+        }
+
+        .petition p {
+            margin: 0;
+            color: #555;
+        }
+
+        .petition a {
+            margin-top: 0.5px;
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+
+        .petition a:hover {
+            text-decoration: underline;
+        }
