@@ -22,7 +22,7 @@ pipeline {
         stage("Archive"){
             steps{
                 archiveArtifacts allowEmptyArchive: true,
-                artifacts: '*/ryan_petitions.war'
+                artifacts: '*/ryan_petitions*.war'
             }
         }
         stage("Docker"){
