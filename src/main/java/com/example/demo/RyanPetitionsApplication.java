@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @SpringBootApplication
 @Controller
 public class RyanPetitionsApplication {
@@ -46,6 +48,17 @@ public class RyanPetitionsApplication {
 		petition.addSignature(name);
 		model.addAttribute("petition", petition);
 		return "redirect:/petitions/" + ID;
+	}
+
+	@GetMapping("/search")
+	public String search(@RequestParam("search") String search, Model model) {
+		List<Petition> results = petitionService.searchPetitions(search);
+		if (results.isEmpty()) {
+			model.addAttribute("noResults", "No Results");
+		} else {
+			model.addAttribute("petitions", results);
+		}
+		return "search-results";
 	}
 
 	@RequestMapping("/hello")

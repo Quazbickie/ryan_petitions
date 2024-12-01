@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <link rel="stylesheet" th:href="@{/stylesheets/homeStyle.css}">
+</head>
+<body>
+    <div class="navbar">
+        <button  class="back">
+            <a th:href="@{/}"> < Back to Home</a>
+        </button>
+    </div>
+    <div class="petition-list">
+        <div th:if="${petitions != null}">
+            <div th:each="petition : ${petitions}" class="petition">
+                <h2 th:text="${petition.title}"></h2>
+                <p th:text="${petition.description}"></p>
+                <a th:href="@{/petitions/{ID}(ID=${petition.ID})}">View</a>
+            </div>
+        </div>
+        <div th:if="${noResults != null}">
+            <p th:text="${noResults}"></p>
+        </div>
+</body>
+</html>
