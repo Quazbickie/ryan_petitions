@@ -34,6 +34,15 @@ public class PetitionService {
         return searchResults;
     }
 
+    public Petition getPetitionByID(int ID){
+        for(Petition p : petitions){
+            if(p.getID() == ID){
+                return p;
+            }
+        }
+        return null;
+    }
+
 
     @Override
     public String toString() {

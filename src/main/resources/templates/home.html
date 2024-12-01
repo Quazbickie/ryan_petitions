@@ -9,20 +9,20 @@
   <div class="navbar">
     <h1>Petitions</h1>
     <div class="search-container">
-      <form action="" method="post">
+      <form action="" method="post" class="search-form">
         <input type="text" placeholder="Search for petitions" required>
         <button type="submit" class="search">Search</button>
-        <button type="button" class="create">
-            <a th:href="@{/create}"> + Create a Petition</a>
-        </button>
       </form>
+        <button type="button" class="create">
+        <a th:href="@{/create}"> + Create a Petition</a>
+      </button>
     </div>
   </div>
   <div class="petition-list">
       <div th:each="petition : ${petitions}" class="petition">
           <h2 th:text="${petition.title}"></h2>
           <p th:text="${petition.description}"></p>
-          <a th:href="@{/petitions/{ID}{ID=${petition.ID}}}">View</a>
+          <a th:href="@{/petitions/{ID}(ID=${petition.ID})}">View</a>
       </div>
   </div>
 </body>

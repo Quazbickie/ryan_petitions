@@ -18,8 +18,9 @@
         }
 
 
-        .search-container {
+        .search-container,.search-form {
             display: flex;
+            flex-direction: row;
             align-items: center;
             gap: 5px;
         }
@@ -39,7 +40,7 @@
             cursor: pointer;
         }
 
-        .create {
+        .create,.back {
             background-color: green;
             color: white;
             border: none;
@@ -48,7 +49,7 @@
             cursor: pointer;
         }
 
-        .create a {
+        .create,.back a {
              text-decoration: none; /* Removes the underline */
              color: white;
              display: inline-block;
@@ -62,7 +63,15 @@
             background-color: darkgreen;
         }
 
-        .petition-list {
+        .petition-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .petition-list,.signature-list {
             display: flex;
             flex-direction: column;
             gap: 5px;
