@@ -22,7 +22,12 @@ pipeline {
         stage("Archive"){
             steps{
                 archiveArtifacts allowEmptyArchive: true,
-                artifacts: '*/ryan_petitions*.war'
+                artifacts: '**/ryan_petitions*.war'
+            }
+        }
+        stage("Manual Deployment"){
+            steps {
+                input "Would you like to deploy the application?"
             }
         }
         stage("Docker"){
@@ -30,6 +35,14 @@ pipeline {
                 sh 'docker build -f Dockerfile -t myapp . '
                 sh 'docker rm -f "myapp_container_test" || true'
                 sh 'docker run --name "myapp_container_test" -p 8081:8080 --detach myapp:latest'
+            }
+            post {
+                success {
+                    echo "App Deployed"
+                }
+                failure {
+                    echo "FAILED"
+                }
             }
         }
 
