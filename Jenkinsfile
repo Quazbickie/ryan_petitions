@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+// built up with code from various labs throughout the semester
     stages {
         stage("GetProject"){
             steps{
@@ -26,11 +26,13 @@ pipeline {
             }
         }
         stage("Manual Deployment"){
+           /* asking developer if they want to proceed with deployment */
             steps {
                 input "Would you like to deploy the application?"
             }
         }
         stage("Docker"){
+            // Run the package in a container exposed on the 9090 port
             steps{
                 sh 'docker build -f Dockerfile -t myapp . '
                 sh 'docker rm -f "myapp_container_test" || true'
