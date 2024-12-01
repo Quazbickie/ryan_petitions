@@ -18,7 +18,7 @@ public class RyanPetitionsApplication {
 
 	@GetMapping("/")
 	public String home(Model model) {
-		//System.out.println(petitionService.toString()); //DEBUG
+		//System.out.println(petitionService.toString()); //DEBUG - Ensure dummy values are correctly populated
 		model.addAttribute("petitions", petitionService.getPetitions());
 		return "home";
 	}
