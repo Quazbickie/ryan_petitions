@@ -40,7 +40,7 @@
             cursor: pointer;
         }
 
-        .create,.back {
+        .create,.back,.create-button {
             background-color: green;
             color: white;
             border: none;
@@ -107,4 +107,13 @@
 
         .petition a:hover {
             text-decoration: underline;
+        }
+
+        .new-petition form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 25px;
+            gap: 10px;
         }

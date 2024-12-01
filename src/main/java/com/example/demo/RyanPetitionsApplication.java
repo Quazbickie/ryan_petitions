@@ -16,7 +16,7 @@ public class RyanPetitionsApplication {
 
 	@GetMapping("/")
 	public String home(Model model) {
-		System.out.println(petitionService.toString()); //DEBUG
+		//System.out.println(petitionService.toString()); //DEBUG
 		model.addAttribute("petitions", petitionService.getPetitions());
 		return "home";
 	}
@@ -25,6 +25,13 @@ public class RyanPetitionsApplication {
 	public String showCreateForm(Model model){
 		model.addAttribute("petition", new Petition("",""));
 		return "create-petition";
+	}
+
+	@PostMapping("/create")
+	public String createPetition(@RequestParam String title, @RequestParam String description) {
+		Petition p = new Petition(title, description);
+		petitionService.addPetition(p);
+		return "redirect:/";
 	}
 
 	@GetMapping("/petitions/{ID}")
