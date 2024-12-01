@@ -21,6 +21,7 @@
         <button type="submit">Sign</button>
     </form>
     <ul class="signature-list">
+        <!-- the th:each loops through each signature in the petition that is passed by the backend into the model -->
         <li th:each="signature : ${petition.signatures}" th:text="${signature}"></li>
     </ul>
 </div>

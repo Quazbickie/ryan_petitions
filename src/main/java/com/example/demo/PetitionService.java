@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public class PetitionService {
-    public final List<Petition> petitions = new ArrayList<>();
+    public final List<Petition> petitions = new ArrayList<>(); // ArrayList of to store all petitions
 
     public PetitionService(){
         petitions.add(new Petition("Save the turtles", "Petition to save the turtles")); // Dummy values
@@ -16,14 +16,17 @@ public class PetitionService {
         petitions.add(new Petition("Save the planet", "Petition to save the planet")); // Dummy values
     }
 
+    // Method to add petition to the arraylist
     public void addPetition(Petition petition){
         petitions.add(petition);
     }
 
+    // return all petitions
     public List<Petition> getPetitions(){
         return petitions;
     }
 
+    // Search petitions by checking each petition and collecting them if they contain search query
     public List<Petition> searchPetitions(String search){
         List<Petition> searchResults = new ArrayList<>();
         for(Petition p : petitions){
@@ -34,6 +37,7 @@ public class PetitionService {
         return searchResults;
     }
 
+    // Return the petition by ID
     public Petition getPetitionByID(int ID){
         for(Petition p : petitions){
             if(p.getID() == ID){

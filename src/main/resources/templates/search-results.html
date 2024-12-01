@@ -12,15 +12,19 @@
         </button>
     </div>
     <div class="petition-list">
+        <!-- check if petitions object in model, as passed by backend, is empty -->
         <div th:if="${petitions != null}">
             <div th:each="petition : ${petitions}" class="petition">
                 <h2 th:text="${petition.title}"></h2>
                 <p th:text="${petition.description}"></p>
+                <!-- link to specific view for petition and ID is dynamically inserted by Thymeleaf  -->
                 <a th:href="@{/petitions/{ID}(ID=${petition.ID})}">View</a>
             </div>
         </div>
+        <!-- check if noResults attribute in model, as passed by backend, is empty -->
         <div th:if="${noResults != null}">
             <p th:text="${noResults}"></p>
         </div>
+    </div>
 </body>
 </html>

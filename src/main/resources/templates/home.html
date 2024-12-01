@@ -2,26 +2,29 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Ryan's Petitions</title>
     <link rel="stylesheet" th:href="@{/stylesheets/homeStyle.css}">
 </head>
 <body>
   <div class="navbar">
-    <h1>Namechange Demo for Petitions</h1>
+    <h1>Petitions</h1>
     <div class="search-container">
       <form action="/search" method="get" class="search-form">
         <input type="text" placeholder="Search for petitions" name="search" required>
         <button type="submit" class="search">Search</button>
       </form>
         <button type="button" class="create">
+            <!-- the th:href uses Thymeleaf to dynamically route to create URL -->
         <a th:href="@{/create}"> + Create a Petition</a>
       </button>
     </div>
   </div>
   <div class="petition-list">
+      <!-- the th:each loops through each petition in petitions that is passed by the backend into the model -->
       <div th:each="petition : ${petitions}" class="petition">
           <h2 th:text="${petition.title}"></h2>
           <p th:text="${petition.description}"></p>
+          <!-- link to specific view for petition and ID is dynamically inserted by Thymeleaf  -->
           <a th:href="@{/petitions/{ID}(ID=${petition.ID})}">View</a>
       </div>
   </div>
