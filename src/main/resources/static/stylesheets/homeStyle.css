@@ -78,6 +78,10 @@
             padding: 2px;
         }
 
+        .signature-list {
+            list-style-type: none;
+        }
+
         .petition {
             display: flex;
             flex-direction: column;
